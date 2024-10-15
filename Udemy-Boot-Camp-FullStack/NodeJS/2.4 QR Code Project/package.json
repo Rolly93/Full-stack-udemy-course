@@ -1,0 +1,17 @@
+{
+  "name": "qr-proyect",
+  "version": "1.0.0",
+  "description": "learning with qr and inquier",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rolando Rios",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^11.0.2",
+    "qr-image": "^3.2.0",
+    "qr-proyect": "file:"
+  }
+}

@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto repeat(7, 1fr);
+    grid-template-rows: repeat(3, minmax(100px, auto));
+    overflow: hidden;
+    }
+ 
+.date{
+    position: relative;
+    left: 70%;
+    bottom: 23px;
+}
+.sidebar{
+    background-color: rgb(244, 222, 179);
+    grid-row: 1 / 4;
+    grid-column: 1/2;
+    padding-right: 17px;
+    overflow-x:hidden;
+    transition: width  0.5s ease-in-out;
+    width:40px;
+    }
+    .sidebar:hover{
+        width: 200px;
+        }        
+        .comment{ 	justify-content : center; }       
+.input-user {
+    width: 200px;
+}
+.comment { 
+    height: 224.989px;
+    width: 80%;
+}
+.post{            
+    margin:10px;
+} 
+.head {
+    background-color: rgb(255, 138, 138);
+    grid-column: 2 / 9;
+    grid-row: 1/2;
+}
+.post-comments {
+    background-color: rgb(240, 234, 172);
+    grid-column: 2 / 9;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.comments {
+    background-color: rgb(240, 234, 172);
+    display: flex;
+    grid-column: 2 / 9;
+    grid-row: 3 / 4;
+    flex-direction: column;  
+}
+.button{
+    margin-left: 20px;
+}
+.box-post{
+    background-color: rgba(245, 224, 0, 0.5);
+ 
+}
+.post-comment{
+    padding-left: 25px;
+    padding-top: 30px;
+}
+.post-icon{
+padding-right: 15px;
+background-color:black;
+color: white;
+width: 20px;
+height: 30px;
+border-radius: 50%;
+}
+.iniciales{
+position: relative;
+left: 6px;
+top: 6px;
+}
+.post-user{
+position: relative;
+left: 40px;
+bottom: 23px;
+}
+@media (max-width: 425px ){
+html,body{
+height: 100%;
+margin: 0;
+padding: 0;
+}
+.grid-container {
+display: grid;
+grid-template-columns:  repeat(7,1fr);
+grid-template-rows: auto repeat(4,1fr);
+height: 100vh;
+overflow: hidden;  
+ }
+.sidebar{
+grid-column: 1/8;
+grid-row: 1/1;
+padding-right: 0px;
+overflow-x:auto;
+transition: height  0.5s ease-in-out;
+height:40px;
+width: 100%;
+}
+.sidebar:hover{
+height: 100vh;
+width: 100%;
+}
+.sidebar.expanded {
+height: 100vh;
+width: 100%;
+}
+.post-comments{
+grid-column: 1/9;
+grid-row: 3/4;
+}
+
+.comments{
+-column: 1/9;
+-row: 4/5;            
+}
+.head
+{
+grid-column: 1/9;
+grid-row: 2 / 3;
+}
+
+}

@@ -1,0 +1,56 @@
+<%- include('partials/header.ejs') %>
+
+<main>
+  <div class="grid-container">
+    <div class="sidebar sidebar-mv">
+<p>Navigator bar</p>    </div>
+    <div class="head">
+      <h1>Lorem</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti beatae cupiditate nulla odit voluptas, excepturi laudantium odio quidem reiciendis eius consequatur dolor! Hic excepturi culpa, officiis a ipsa dolores voluptatibus.</p>
+    </div>
+    <div class="post-comments" >
+
+<h2 class="post">Post Your Comments</h2>
+
+<form action="/submit" method="POST">
+<input class="post input-user" type="text" name="userName" placeHolder="Insert your Username">
+<textarea class="post comment" name="comments" rows="10" placeholder="Make you Comments">
+</textarea>
+  <input type="submit" class="post" value="Submit">
+</form>
+
+</div>
+    <div class="comments">
+      <h2 class="post">Comments</h2>
+      <% if (locals.posts && posts.length) { %>
+        <% posts.forEach(post => { %>
+          <div class="post box-post" id="<%= post.id %>">
+            <div class="post-icon">
+              <span class="iniciales"><%= post.icon %></span>
+            </div>
+            <strong class="post post-user"><%= post.userName %></strong>
+            <strong class="date">Date: <%= post.date_time %></strong>
+            <p class="post"><%= post.comments %></p>
+            <form action="/delete/<%= post.id %>" method="DELETE">
+              <button type="submit" class="button" id="<%=post.id%>">Delete</button>
+            </form>
+            
+            <form action="/edit/<%= post.id %>" method="PUT">
+              <button type="submit" class="edit" id="<%=post.id%>">Edit</button>
+            </form>
+            
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>No Post Available</p>
+      <% } %>
+
+       
+    </div>
+</div>
+
+</main>
+
+
+
+<%- include('partials/footer.ejs') %>
